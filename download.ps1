@@ -22,7 +22,7 @@ if ($dictPath -and (Test-Path $dictPath)) {
     $dict = Get-Content $dictPath | ConvertFrom-Json;
 } else {
     # "辞書ファイルをダウンロードします"
-    $dict = iwr "https://raw.githubusercontent.com/sweshelo/ekihack/master/list.json" | ConvertFrom-Json
+    $dict = iwr "https://raw.githubusercontent.com/keigetsuka/ekihack/master/list.json" | ConvertFrom-Json
 }
 $wrapList = $dict | Get-Member | ?{$_.MemberType -eq "NoteProperty"} | select Name
 
